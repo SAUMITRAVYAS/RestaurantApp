@@ -1,0 +1,21 @@
+
+.container {
+  margin-top:120px;
+}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .card {
+    margin-bottom: 50px;
+  }
+  
+  .card-title {
+    text-align: center;
+  }
+  
+  .card-text {
+    text-align: center;
+  }
+  

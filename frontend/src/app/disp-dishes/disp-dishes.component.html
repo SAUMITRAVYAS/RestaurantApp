@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <div class="input-group">
+        <input type="text" class="form-control rounded-pill" placeholder="Search" (change)="filterDish($event)" >
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" data-toggle="tooltip" data-placement="bottom" title="Search">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 text-right">
+      <a class="btn btn-primary rounded-pill" routerLink="./add" >Create Dish</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let dish of filtereddishes " >
+      <div class="card h-100">
+        <img [src]="dish.dishImage" class="card-img-top" alt="dish image" />
+        <div class="card-body">
+          <h5 class="card-title">{{ dish.dishName }}</h5>
+          <p class="card-text">{{ dish.dishDescription }}</p>
+          <p class="card-text">{{ dish.dishPrice | currency }}</p>
+          <p class="card-text">{{ dish.nature }}</p>
+          <button class="btn btn-danger" (click)="deleteDish(dish.dishId)">Delete</button>
+          <!-- <button class="btn btn-outline-secondary" style="margin-left: 55px;">Update</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
